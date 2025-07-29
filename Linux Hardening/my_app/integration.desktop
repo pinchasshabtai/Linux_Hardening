@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Integration App
+Exec=start-app
+#Icon=/home/pinchas/my_app/icon.png
+Type=Application
+Terminal=false

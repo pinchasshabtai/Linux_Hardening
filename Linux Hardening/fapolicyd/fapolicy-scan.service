@@ -1,0 +1,12 @@
+[Unit]
+Description=Fapolicy Scan
+DefaultDependencies=no
+After=local-fs.target systemd-tmpfiles-setup.service
+
+[Service]
+ExecStart=/usr/sbin/fapolicyd --debug-deny
+StandardOutput=append:/etc/fapolicyd/fapolicy-scan-log.output
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

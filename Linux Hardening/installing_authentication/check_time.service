@@ -1,0 +1,6 @@
+[Unit]
+Description=Check if Unix timestamp has passed and run commands
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/check_time.sh 
