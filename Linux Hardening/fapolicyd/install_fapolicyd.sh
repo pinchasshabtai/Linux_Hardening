@@ -87,17 +87,16 @@ echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/sbin/start_nftable
 
 fagenrules --load
 
-# === פריסת הסרוויס שלך ===
-echo "[*] מתקין את הסרוויס המותאם..."
-install -m 000 "$SERVICE_FILE" /etc/systemd/system/
-systemctl daemon-reexec
-systemctl daemon-reload
-systemctl enable fapolicy-scan.service
-systemctl start fapolicy-scan.service
-
 install -m 100 ./start_scan.sh /usr/local/sbin/start-sf
 install -m 100 ./stop_scan.sh /usr/local/sbin/stop-sf
 install -m 100 ./stop_fapolicyd.sh /usr/local/sbin/stop_fapolicyd
 install -m 100 ./start_fapolicyd.sh /usr/local/sbin/start_fapolicyd
+
+# === פריסת הסרוויס שלך ===
+echo "[*] מתקין את הסרוויס המותאם..."
+install -m 000 "$SERVICE_FILE" /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable fapolicy-scan.service
+systemctl start fapolicy-scan.service
 
 echo "Done!"
