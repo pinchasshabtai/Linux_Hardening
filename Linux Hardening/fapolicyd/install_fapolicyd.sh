@@ -86,32 +86,32 @@ echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/local/sbin/start_nftable
 echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/sbin/start_nftables_firewall >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
 #####
-echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/dash ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/dircolors ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/lesspipe ftype=text/x-shellscript trust=0
-echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/sudo ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/systemctl ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/bash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/bin/dash : path=/usr/bin/basename ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/dash : path=/usr/bin/dirname ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/dash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/bin/gnome-shell : path=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/gnome-shell : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/bin/python3.12 : path=/usr/bin/gnome-terminal.real ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/python3.12 : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/bin/sudo : path=/usr/bin/bash ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/sudo : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/bin/systemctl : path=/usr/bin/systemd-tty-ask-password-agent ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/bin/systemctl : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/libexec/gnome-terminal-server : path=/usr/bin/bash ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/libexec/gnome-terminal-server : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/libexec/gnome-terminal-server ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/lib/systemd/systemd : path=/usr/lib/systemd/systemd-executor ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/lib/systemd/systemd : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
-echo allow perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/bin/gnome-terminal ftype=text/x-python trust=0
-echo allow perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/bin/python3.12 ftype=application/x-executable trust=0
-echo allow perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 ftype=application/x-sharedlib trust=0
+echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/dash
+echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/dircolors
+echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/lesspipe
+echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/sudo
+echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/systemctl
+echo allow perm=execute exe=/usr/bin/bash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/bin/dash : path=/usr/bin/basename
+echo allow perm=execute exe=/usr/bin/dash : path=/usr/bin/dirname
+echo allow perm=execute exe=/usr/bin/dash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/bin/gnome-shell : path=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop
+echo allow perm=execute exe=/usr/bin/gnome-shell : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/bin/python3.12 : path=/usr/bin/gnome-terminal.real
+echo allow perm=execute exe=/usr/bin/python3.12 : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/bin/sudo : path=/usr/bin/bash
+echo allow perm=execute exe=/usr/bin/sudo : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/bin/systemctl : path=/usr/bin/systemd-tty-ask-password-agent
+echo allow perm=execute exe=/usr/bin/systemctl : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/libexec/gnome-terminal-server : path=/usr/bin/bash
+echo allow perm=execute exe=/usr/libexec/gnome-terminal-server : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/libexec/gnome-terminal-server
+echo allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/lib/systemd/systemd : path=/usr/lib/systemd/systemd-executor
+echo allow perm=execute exe=/usr/lib/systemd/systemd : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+echo allow perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/bin/gnome-terminal
+echo allow perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/bin/python3.12
+echo allow perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
 
 fagenrules --load
 
