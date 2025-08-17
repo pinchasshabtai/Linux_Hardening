@@ -71,31 +71,6 @@ echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/bin/systemctl >> /etc/fa
 echo allow_audit perm=any exe=/usr/lib/systemd/systemd-executor : path=/usr/sbin/usbguard-dbus >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/sbin/stop_usbguard >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
-#gui
-echo allow_audit perm=execute exe=/usr/bin/gnome-shell : path=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop
-echo allow_audit perm=execute exe=/usr/bin/gnome-shell : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-echo allow_audit perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-
-#trminal
-echo allow_audit perm=execute exe=/usr/bin/gnome-shell : path=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop
-echo allow_audit perm=execute exe=/usr/bin/gnome-shell : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-echo allow_audit perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/bin/gnome-terminal
-echo allow_audit perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/bin/python3.12
-echo allow_audit perm=execute exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-echo allow_audit perm=execute exe=/usr/bin/python3.12 : path=/usr/bin/gnome-terminal.real
-echo allow_audit perm=execute exe=/usr/bin/python3.12 : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-echo allow_audit perm=execute exe=/usr/libexec/gnome-terminal-server : path=/usr/bin/bash
-echo allow_audit perm=execute exe=/usr/libexec/gnome-terminal-server : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-echo allow_audit perm=execute exe=/usr/bin/bash : path=/usr/bin/lesspipe
-echo allow_audit perm=execute exe=/usr/bin/bash : path=/usr/bin/dash
-echo allow_audit perm=execute exe=/usr/bin/bash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-echo allow_audit perm=execute exe=/usr/bin/dash : path=/usr/bin/basename
-echo allow_audit perm=execute exe=/usr/bin/dash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-echo allow_audit perm=execute exe=/usr/bin/dash : path=/usr/bin/dirname
-echo allow_audit perm=execute exe=/usr/bin/dash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-echo allow_audit perm=execute exe=/usr/bin/bash : path=/usr/bin/dircolors
-echo allow_audit perm=execute exe=/usr/bin/bash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-
 #stop_nftables_firewall
 echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/local/sbin/stop_nftables_firewall >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/sbin/nft >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
