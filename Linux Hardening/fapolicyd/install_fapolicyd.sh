@@ -107,6 +107,78 @@ echo allow_audit perm=execute exe=/usr/lib/systemd/systemd : path=/usr/lib/syste
 echo allow_audit perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/local/sbin/check_time.sh >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/bin/bash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
+
+#tty
+allow perm=execute exe=/snap/snapd/24792/usr/bin/snap : path=/usr/bin/getent >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/snap/snapd/24792/usr/bin/snap : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/cat >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/dash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/dircolors >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/groups >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/lesspipe >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/locale-check >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/locale >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/mesg >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/bash : path=/usr/bin/tr >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/basename >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/cat >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/cut >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/dash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/date >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/dirname >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/env >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/expr >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/find >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/grep >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/id >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/mawk >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/stat >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/uname >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/bin/xkbcomp >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/lib/ubuntu-release-upgrader/release-upgrade-motd >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/lib/update-notifier/update-motd-fsck-at-reboot >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/lib/update-notifier/update-motd-reboot-required >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/share/unattended-upgrades/update-motd-unattended-upgrades >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/env : path=/usr/bin/run-parts >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/env : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/login : path=/usr/bin/bash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/login : path=/usr/bin/dash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/login : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/00-header >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/10-help-text >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/50-motd-news >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/85-fwupd >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/90-updates-available >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/91-contract-ua-esm-status >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/91-release-upgrade >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/92-unattended-upgrades >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/95-hwe-eol >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/98-fsck-at-reboot >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/etc/update-motd.d/98-reboot-required >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/usr/bin/dash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/run-parts : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/Xwayland : path=/usr/bin/dash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/Xwayland : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/libexec/xdg-document-portal : path=/usr/bin/fusermount3 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/libexec/xdg-document-portal : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/bin/dbus-daemon >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/bin/snap >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/bin/systemctl >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/libexec/xdg-document-portal >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/libexec/xdg-permission-store >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/lib/systemd/systemd >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/lib/systemd/systemd-user-runtime-dir >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd : path=/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd : path=/usr/lib/systemd/user-generators/systemd-xdg-autostart-generator >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/sbin/agetty : path=/usr/bin/login >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/sbin/agetty : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/bin/dash : path=/usr/lib/sysstat/sadc >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/lib/sysstat/sa1 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/sbin/agetty >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/sbin/cron : path=/usr/bin/dash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+allow perm=execute exe=/usr/sbin/cron : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+ 
 #echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/dash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 #echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/dircolors >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 #echo allow perm=execute exe=/usr/bin/bash : path=/usr/bin/lesspipe >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
