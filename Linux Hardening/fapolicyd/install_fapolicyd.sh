@@ -21,8 +21,8 @@ dpkg -i $DEB_DIR/*.deb
 echo "[*] משנה trust ל-file בקובץ הקונפיגורציה..."
 sed -i 's/^trust *= *.*/trust = file/' /etc/fapolicyd/fapolicyd.conf
 
-echo "[*] Setting permissive mode to 1 in /etc/fapolicyd/fapolicyd.conf..."
-sed -i 's/^permissive *= *0/permissive = 1/' /etc/fapolicyd/fapolicyd.conf
+#echo "[*] Setting permissive mode to 1 in /etc/fapolicyd/fapolicyd.conf..."
+#sed -i 's/^permissive *= *0/permissive = 1/' /etc/fapolicyd/fapolicyd.conf
 
 # === יצירת תיקיית rules.d וארבעת הקבצים ===
 echo "[*] יוצר את /etc/fapolicyd/rules.d ואת קבצי הכללים..."
