@@ -10,12 +10,12 @@ arg="$1"
 if [[ -z "$arg" ]]; then
   #stop_usbguard
   #stop_nftables_firewall
-  #stop_fapolicyd
+  stop_fapolicyd
   :
 elif [[ "$arg" == "-s" ]]; then
   #stop_usbguard
   #stop_nftables_firewall 
-  #start-sf
+  start-sf
   : 
 else
   echo "The parameter must be either empty or -s!!"
