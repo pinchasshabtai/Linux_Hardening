@@ -473,7 +473,7 @@ install -m 100 ./start_fapolicyd.sh /usr/local/sbin/start_fapolicyd
 echo "[*] מתקין את הסרוויס המותאם..."
 install -m 000 "$SERVICE_FILE" /etc/systemd/system/
 systemctl daemon-reload
-systemctl enable fapolicy-scan.service
-systemctl start fapolicy-scan.service
+systemctl enable fapolicyd.service
+systemctl start fapolicyd.service
 
 echo "Done!"
