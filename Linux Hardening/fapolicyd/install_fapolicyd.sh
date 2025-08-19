@@ -35,22 +35,22 @@ touch /etc/fapolicyd/rules.d/04-deny-all.rules
 
 echo deny_audit perm=any all : all > /etc/fapolicyd/rules.d/04-deny-all.rules
 echo allow_audit perm=open all : all > /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any all : path=/usr/local/sbin/stop-sf >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any all : path=/usr/local/sbin/start-sf >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any all : path=/usr/local/sbin/stop_fapolicyd >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any all : path=/usr/local/sbin/start_fapolicyd >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/bin/show_lock_time >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/bin/close_hardening >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/local/bin/show_lock_time >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/local/bin/close_hardening >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any all : path=/usr/local/sbin/fapolicyd-scan-stop >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any all : path=/usr/local/sbin/fapolicyd-scan >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any all : path=/usr/local/sbin/fapolicyd-enforce-stop >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any all : path=/usr/local/sbin/fapolicyd-enforce >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/bin/mivzar-cli-status >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/bin/mivzar-close-hardening >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/local/bin/mivzar-cli-status >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/local/bin/mivzar-close-hardening >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
 
 echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/bin/shuf >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=any exe=/usr/bin/bash : path=/etc/verification/Totp >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/bin/date >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/bin/open_hardening >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/bin/mivzar-open-hardening >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/bin/bash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any all : path=/usr/local/bin/opening_verification >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any all : path=/usr/local/bin/mivzar-cli >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 ########################
 echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/sbin/integration_AV_Client >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=any exe=/usr/bin/sudo : path=/usr/local/sbin/integration_AV_Client >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
@@ -58,7 +58,7 @@ echo allow_audit perm=any all : path=/usr/local/sbin/integration_AV_Client >> /e
 echo allow_audit perm=any exe=/usr/local/sbin/integration_AV_Client : all >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=any exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/local/bin/start-myapp >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=any exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/bin/bash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
-echo allow_audit perm=any exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/local/bin/start-app >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=any exe=/usr/lib/x86_64-linux-gnu/glib-2.0/gio-launch-desktop : path=/usr/local/bin/mivzar-gui >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
 echo allow_audit perm=any exe=/usr/bin/bash : path=/usr/local/bin/start-myapp >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
@@ -464,10 +464,10 @@ allow perm=execute exe=/usr/sbin/gdm3 : path=/usr/lib/x86_64-linux-gnu/ld-linux-
 
 fagenrules --load
 
-install -m 100 ./start_scan.sh /usr/local/sbin/start-sf
-install -m 100 ./stop_scan.sh /usr/local/sbin/stop-sf
-install -m 100 ./stop_fapolicyd.sh /usr/local/sbin/stop_fapolicyd
-install -m 100 ./start_fapolicyd.sh /usr/local/sbin/start_fapolicyd
+install -m 100 ./fapolicyd-scan.sh /usr/local/sbin/fapolicyd-scan
+install -m 100 ./fapolicyd-scan-stop.sh /usr/local/sbin/fapolicyd-scan-stop
+install -m 100 ./fapolicyd-enforce-stop.sh /usr/local/sbin/fapolicyd-enforce-stop
+install -m 100 ./fapolicyd-enforce.sh /usr/local/sbin/fapolicyd-enforce
 
 # === פריסת הסרוויס שלך ===
 echo "[*] מתקין את הסרוויס המותאם..."

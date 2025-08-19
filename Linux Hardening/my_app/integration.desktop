@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Integration App
-Exec=start-app
+Exec=mivzar-gui
 #Icon=/home/pinchas/my_app/icon.png
 Type=Application
 Terminal=false

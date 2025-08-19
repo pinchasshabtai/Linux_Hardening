@@ -38,9 +38,9 @@ if [ ! -s "$log_time" ]; then
     echo "run: opening"
     
     if [ "$answer" = "y" ]; then
-      open_hardening -s
+      mivzar-open-hardening -s
     else
-      open_hardening
+      mivzar-open-hardening
     fi
 
     echo "run: systemctl start"
