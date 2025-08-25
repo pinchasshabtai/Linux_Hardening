@@ -18,4 +18,5 @@ elif ! systemctl is-active --quiet fapolicyd; then
   > "$FILE"
 else
   echo "fapolicyd is already running."
+  > "$FILE"
 fi
