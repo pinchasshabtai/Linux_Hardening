@@ -107,6 +107,9 @@ echo allow_audit perm=execute exe=/usr/lib/systemd/systemd : path=/usr/lib/syste
 echo allow_audit perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/local/sbin/check_time.sh >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 echo allow_audit perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/bin/bash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
+#mivzar-gui
+allow_audit perm=execute exe=/usr/bin/bash : path=/usr/local/bin/mivzar-gui
+allow_audit perm=execute exe=/usr/bin/sudo : path=/usr/local/bin/mivzar-gui
 
 #tty
 allow perm=execute exe=/snap/snapd/24792/usr/bin/snap : path=/usr/bin/getent >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
