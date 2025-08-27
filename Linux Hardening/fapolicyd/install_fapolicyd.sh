@@ -108,8 +108,13 @@ echo allow_audit perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/
 echo allow_audit perm=execute exe=/usr/lib/systemd/systemd-executor : path=/usr/bin/bash >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
 #mivzar-gui
-allow_audit perm=execute exe=/usr/bin/bash : path=/usr/local/bin/mivzar-gui
-allow_audit perm=execute exe=/usr/bin/sudo : path=/usr/local/bin/mivzar-gui
+echo allow_audit perm=execute exe=/usr/bin/bash : path=/usr/local/bin/mivzar-gui >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=execute exe=/usr/bin/sudo : path=/usr/local/bin/mivzar-gui >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+
+#login after lockdown
+echo allow_audit perm=execute exe=/usr/libexec/gdm-session-worker : path=/usr/libexec/gdm-session-worker >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=execute exe=kworker/u534:2 : path=/usr/bin/kmod >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
+echo allow_audit perm=execute exe=kworker/u534:2 : path=/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
 
 #tty
 allow perm=execute exe=/snap/snapd/24792/usr/bin/snap : path=/usr/bin/getent >> /etc/fapolicyd/rules.d/03-allow-my-rule.rules
