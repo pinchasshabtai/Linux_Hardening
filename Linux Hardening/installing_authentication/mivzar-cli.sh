@@ -32,10 +32,6 @@ lock_time=$(date -d "@$lock_time_unix" +"%Y-%m-%d %H:%M:%S")
 if [ ! -s "$log_time" ]; then
     # כתיבה לקובץ
     echo "$lock_time_unix" > "$log_time"
-    echo "written to file log_time.txt"
-
-    # פקודות נוספות
-    echo "run: opening"
     
     if [ "$answer" = "y" ]; then
       mivzar-open-hardening -s
@@ -43,10 +39,7 @@ if [ ! -s "$log_time" ]; then
       mivzar-open-hardening
     fi
 
-    echo "run: systemctl start"
     systemctl start check_time.timer
-
-    echo "run: systemctl enable"
     systemctl enable check_time.timer
 
     echo "The operation was completed successfully."

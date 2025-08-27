@@ -10,7 +10,6 @@ fi
 if systemctl is-active --quiet fapolicyd; then
   echo "fapolicyd is already running."
 else 
-  echo "[*] Enabling and starting fapolicyd service..."
   systemctl enable fapolicyd
   systemctl start fapolicyd
 fi

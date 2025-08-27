@@ -14,18 +14,18 @@ DEB_DIR="./fapolicyd-offline"
 SERVICE_FILE="./fapolicy-scan.service"
 
 # === התקנת קבצי .deb ===
-echo "[*] מתקין חבילות..."
+echo "[*] Installs packages..."
 dpkg -i $DEB_DIR/*.deb
 
 # === שינוי בקובץ קונפיגורציה של fapolicyd.conf ===
-echo "[*] משנה trust ל-file בקובץ הקונפיגורציה..."
+echo "[*] Change the trust configuration file to file..."
 sed -i 's/^trust *= *.*/trust = file/' /etc/fapolicyd/fapolicyd.conf
 
 #echo "[*] Setting permissive mode to 1 in /etc/fapolicyd/fapolicyd.conf..."
 #sed -i 's/^permissive *= *0/permissive = 1/' /etc/fapolicyd/fapolicyd.conf
 
 # === יצירת תיקיית rules.d וארבעת הקבצים ===
-echo "[*] יוצר את /etc/fapolicyd/rules.d ואת קבצי הכללים..."
+echo "[*] Creates the folder and rules files..."
 mkdir -p /etc/fapolicyd/rules.d
 
 touch /etc/fapolicyd/rules.d/01-deny-my-rule.rules
@@ -473,7 +473,7 @@ install -m 100 ./fapolicyd-enforce-stop.sh /usr/local/sbin/fapolicyd-enforce-sto
 install -m 100 ./fapolicyd-enforce.sh /usr/local/sbin/fapolicyd-enforce
 
 # === פריסת הסרוויס שלך ===
-echo "[*] מתקין את הסרוויס המותאם..."
+echo "[*] Installs the scanning service..."
 install -m 000 "$SERVICE_FILE" /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable fapolicyd.service

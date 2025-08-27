@@ -14,7 +14,6 @@ if ! systemctl is-active --quiet fapolicy-scan; then
     echo "fapolicyd is already running."
     exit 1
   else 
-    echo "[*] Enabling and starting fapolicyd service..."
     systemctl enable fapolicyd
     systemctl start fapolicyd
     exit 1
@@ -22,11 +21,9 @@ if ! systemctl is-active --quiet fapolicy-scan; then
 fi
 
 # עוצרים את הסרוויס fapolicy-scan.service
-echo "[*] Stopping fapolicy-scan.service..."
 systemctl stop fapolicy-scan.service
 
 # עושים disable לסרוויס הזה
-echo "[*] Disabling fapolicy-scan.service..."
 systemctl disable fapolicy-scan.service
 
 # מגדירים נתיבים
@@ -42,7 +39,6 @@ if [[ ! -f "$LOGFILE" ]]; then
 fi
 
 # מעבדים את הקובץ וכותבים לפלט
-echo "[*] Processing logfile and writing rules to $RULE_02..."
 sed -i -e '/dec=/!d' -e's/.*dec=//' -e's/ pid=[^ ]*//' -e 's/ auid=[^ ]*//' -e 's/deny_audit/allow/' "$LOGFILE"
 tee -a "$LOGFILE" < "$RULE_02" > /dev/null
 sort "$LOGFILE" | uniq | sudo tee "$LOGFILE.tmp" > /dev/null && sudo mv "$LOGFILE.tmp" "$LOGFILE"
@@ -51,16 +47,13 @@ cp "$LOGFILE" "$RULE_02"
 echo "" | sudo tee "$LOGFILE" > /dev/null
 
 # טוענים את החוקים החדשים
-echo "[*] Loading new rules with fagenrules..."
 fagenrules --load
 
 # משנים את permissive ל-0 בקובץ הקונפיג
 
-echo "[*] Setting permissive mode to 0 in $CONF_FILE..."
 sed -i 's/^permissive *= *1/permissive = 0/' "$CONF_FILE"
 
 # מפעילים את הסרוויס fapolicyd
-echo "[*] Enabling and starting fapolicyd service..."
 systemctl enable fapolicyd
 systemctl start fapolicyd
 

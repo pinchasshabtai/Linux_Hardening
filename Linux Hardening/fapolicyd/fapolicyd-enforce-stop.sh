@@ -8,7 +8,6 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 if systemctl is-active --quiet fapolicyd; then
-  echo "[*] Stopping and disabling fapolicyd service..."
   systemctl stop fapolicyd
   systemctl disable fapolicyd
 else
